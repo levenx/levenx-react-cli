@@ -2,7 +2,7 @@
 
 [CSDN教程](https://blog.csdn.net/m0_37890289/article/details/105421173)
 
-![](./public/ts.jpg)
+<img src="./public/ts.jpg" width="200"/>
 
 ---
  
