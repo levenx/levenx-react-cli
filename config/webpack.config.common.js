@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const common = {
     entry: [
-        './src/index.js' //入口文件
+        './src/index.tsx' //入口文件
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -21,6 +21,10 @@ const common = {
                 ]
             },
             {
+                test: /\.tsx?$/,
+                use: ['ts-loader']
+            },
+            {
                 test: /\.(le|c)ss$/,
                 use: [
                     { loader: 'style-loader' },
@@ -34,7 +38,9 @@ const common = {
         // 设置别名
         alias: {
             '@': path.resolve(__dirname, 'src')// 这样配置后 @ 可以指向 src 目录
-        }
+        },
+        // 添加需要解析的文件格式
+        extensions: ['.ts', '.tsx', '.js', '.json']
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
